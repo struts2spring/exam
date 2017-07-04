@@ -19,6 +19,9 @@ question_choice_link = Table('question_choice_link', Base.metadata,
 
 
 class Address(Base):
+    '''
+    address of exam users.
+    '''
     __tablename__ = 'address'
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.id'))
@@ -30,6 +33,9 @@ class Address(Base):
     time_updated = Column(DateTime(timezone=True), onupdate=func.now())
 
 class User(Base):
+    '''
+    user of exam
+    '''
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
     first_name = Column(String(50))

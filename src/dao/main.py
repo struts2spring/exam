@@ -1,6 +1,6 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from user import User, Base
+from entity import User, Base
 from sqlalchemy.ext.declarative import declarative_base
 # Base = declarative_base()
 if __name__ == '__main__':
