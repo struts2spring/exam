@@ -9,15 +9,39 @@ meta = Base.metadata
 
 user_address_link = Table('user_address_link', Base.metadata,
     Column('user_id', Integer, ForeignKey('user.id')),
-    Column('address_id', Integer, ForeignKey('address.id'))
+    Column('address_id', Integer, ForeignKey('address.id')),
 )
 question_choice_link = Table('question_choice_link', Base.metadata,
     Column('question_id', Integer, ForeignKey('question.id')),
-    Column('choice_id', Integer, ForeignKey('choice.id'))
+    Column('choice_id', Integer, ForeignKey('choice.id')),
 )
 
+question_subject_link = Table('question_subject_link', Base.metadata,
+    Column('question_id', Integer, ForeignKey('question.id')),
+    Column('subject_id', Integer, ForeignKey('subject.id')),
+)
 
+# class ExamSet(Base):
+#     '''
+#     address of exam users.
+#     '''
+#     __tablename__ = 'exam_set'
+#     id = Column(Integer, primary_key=True)
+#     subject_desc = Column(String)
+#     subject_topic = Column(String)
+#     time_created = Column(DateTime(timezone=True), server_default=func.now())
+#     time_updated = Column(DateTime(timezone=True), onupdate=func.now())
 
+class Subject(Base):
+    '''
+    address of exam users.
+    '''
+    __tablename__ = 'subject'
+    id = Column(Integer, primary_key=True)
+    subject_desc = Column(String)
+    subject_topic = Column(String)
+    time_created = Column(DateTime(timezone=True), server_default=func.now())
+    time_updated = Column(DateTime(timezone=True), onupdate=func.now())
 class Address(Base):
     '''
     address of exam users.
